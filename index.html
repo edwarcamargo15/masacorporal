@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<title>INDICE DE MASA CORPORAL</title>
+
+
+	<script type="text/javascript">
+		/*let peso= prompt("Ingresa tu peso");
+		let altura= prompt("Ingresa tu Altura");
+        console.log(" No INGRESE "+ peso + "-" + altura);*/
+
+        calcularImc(peso,altura);
+		function calcularImc(){
+		console.log(" IMC p "+ peso);
+		console.log(" IMC a "+ altura);
+		var peso = document.getElementById("peso").value;
+		var altura = document.getElementById("altura").value;
+		let imc= peso/(altura**2);
+        let text="";
+        console.log(" Ingrese a "+ imc);
+        if (imc < 15) {
+         text = "Delgadez Muy severa";
+         color
+         }
+        else if(imc>15 && imc<15.9){
+         	 text = "Delgadez severa";
+         }
+         else if(imc>16 && imc<18.4){
+         	 text = "Delgadez";
+         }
+         else if(imc>18.5 && imc<24.9){
+         	 text = "Peso Saludable";
+         }
+         else if(imc>25 && imc<29.9){
+         	 text = "Sobrepeso";
+         }
+         else if(imc>30 && imc<34.9){
+         	 text = "Obesidad severa";
+         }
+         else if(imc>40){
+         	text="Obesidad Morbida";
+         }
+         else{
+         	text="Dato Invalido";
+         }
+         alert(text);
+		}
+		 
+	</script>
+</head>
+<body>
+<form>
+  <div class="row">
+    <div class="col">
+      <input type="number" class="form-control" placeholder="Peso" id="peso">
+    </div>
+    <div class="col">
+      <input type="number" class="form-control" placeholder="Altura" id="altura">
+    </div>
+     <div class="col-auto">
+      <button onclick="calcularImc(this,this)" type="submit" class="btn btn-primary mb-2">Calcular</button>
+    </div>
+  </div>
+</form>
+
+
+
+</body>
+</html>
