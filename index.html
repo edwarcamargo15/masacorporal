@@ -2,100 +2,143 @@
 <html>
 <head>
 	<!-- CSS only -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-<!-- JS, Popper.js, and jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<!-- JS, Popper.js, and jQuery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 	<title>INDICE DE MASA CORPORAL</title>
 
 
 	
 </head>
 <body>
-<form>
-  <div class="row">
-    <div class="col">
-      <label>Ingrese Peso Corporal Kilogramos</label>
-      <input type="number" class="form-control" placeholder="Peso" id="peso">
-    </div>
-    <div class="col">
-    	<label>Ingrese Altura en Metros (Ejemplo:1.50,1.80)</label>
-      <input type="number" class="form-control" placeholder="Altura" id="altura">
-    </div>
-     <div class="col-auto">
-      <button onclick="calcularImc(this,this)" type="submit" class="btn btn-primary mb-2" id="btn">Calcular</button>
-    </div>
-  </div>
-</form>
-<script type="text/javascript">
+
+	<div>
+		<div class="row">
+			<a href="masa.html">Indice de Masa Corporal</a>
+			<a href="numero.html">Numeros Par E Impar</a>
+			<a href="tabla.html">Tabla de Multiplicar</a>
+			
+
+		</div>
+		
+
+	</div>
+	<form>
+		<div class="row">
+			<div class="col">
+				<label>Ingrese Peso Corporal Kilogramos</label>
+				<input type="number" class="form-control" placeholder="Peso" id="peso">
+			</div>
+			<div class="col">
+				<label>Ingrese Altura en Metros (Ejemplo:1.50,1.80)</label>
+				<input type="number" class="form-control" placeholder="Altura" id="altura">
+			</div>
+			<div class="col">
+				<button onclick="calcularImc(this,this)" type="submit" class="btn btn-primary mb-2" id="btn">Calcular</button>
+			</div>
+		</div>
+	</form>
+	<script type="text/javascript">
+
+
+		var numero = prompt("Introduce Limite de Numeros a Imprimir");
+        var cont=0;
+ 		for(cont=1;cont<=numero;cont++){
+		var resultado = parImpar(numero);
+		alert("El número "+cont+" es "+resultado);
+	}
+		function parImpar(numero) {
+
+			
+			if(cont % 2 == 0) {
+
+				return "par";
+			}
+			else {
+				return "impar";
+			}
+		}
+		
+
+
+		var valor = prompt("Ingresa Numero para multiplicar");
+		var i=0;
+
+		while(valor>=2 && valor<=10){
+			 if(i<=10){
+             alert(valor+" * "+i+"= " + (valor*i)+"\n");
+             i++;
+         }
+
+         }
 
 
 		var opc= prompt("Selecciona Opcion: \n" + "Prompt: Ingresa 1"+"\n" + "Input: Ingresa 2");
-	    var peso;
+		var peso;
 		var altura;
 		/*let peso= prompt("Ingresa tu peso");
 		let altura= prompt("Ingresa tu Altura");
-        console.log(" No INGRESE "+ peso + "-" + altura);*/
+		console.log(" No INGRESE "+ peso + "-" + altura);*/
 
-       
-        if(opc==1){
 
-         peso= prompt("Ingresa tu peso");
-		 altura= prompt("Ingresa tu Altura");
-        console.log(" No INGRESE "+ peso + "-" + altura);
-        calcularImc(peso,altura);
-        }if(opc==2){
-        	peso = document.getElementById("peso").value;
-		altura = document.getElementById("altura").value;
-        	
-        }
-        else{
-        	alert("Dato Invalido condicion");
-        }
-        
-		function calcularImc(peso,altura){
-	     
-		
-        	 
- 	   /* peso = document.getElementById("peso").value;
-		altura = document.getElementById("altura").value;*/
-		
-		let imc= peso/(altura**2);
-        let text="";
-        console.log(" Ingrese a "+ imc);
-       
-        if (imc < 15) {
-         text = "Delgadez Muy severa";
-         }
-        else if(imc>15 && imc<15.9){
-         	 text = "Delgadez severa \n"+ "Indice Masa Corporal (IMC): " + imc;
-         }
-         else if(imc>16 && imc<18.4){
-         	 text = "Delgadez \n" + "Indice Masa Corporal (IMC): "+ imc;
-         }
-         else if(imc>18.5 && imc<24.9){
-         	 text = "Peso Saludable \n"+ "Indice Masa Corporal (IMC): " + imc;
-         }
-         else if(imc>25 && imc<29.9){
-         	 text = "Sobrepeso \n"+ "Indice Masa Corporal (IMC): "  + imc;
-         }
-         else if(imc>30 && imc<34.9){
-         	 text = "Obesidad severa \n"+ "Indice Masa Corporal (IMC): " + imc;
-         }
-         else if(imc>40){
-         	text="Obesidad Morbida \n"+ "Indice Masa Corporal (IMC): "+ imc;
-         }
-         else{
-         	text="Dato Invalido";
-         }
+		if(opc==1){
 
-         alert(text);
+			peso= prompt("Ingresa tu peso");
+			altura= prompt("Ingresa tu Altura");
+			console.log(" No INGRESE "+ peso + "-" + altura);
+			calcularImc(peso,altura);
+		}if(opc==2){
+			peso ;
+			altura;
+			calcularImc(peso,altura);
+		}
+		else{
+			alert("Dato Invalido condicion");
 		}
 
-		 
-	</script>
+		function calcularImc(peso,altura){
+
+
+ 	   /* peso = document.getElementById("peso").value;
+ 	   altura = document.getElementById("altura").value;*/
+
+ 	   let imc= peso/(altura**2);
+ 	   let text="";
+ 	   console.log(" Ingrese a "+ imc);
+
+ 	   if (imc < 15) {
+ 	   	text = "Delgadez Muy severa";
+ 	   }
+ 	   else if(imc>15 && imc<15.9){
+ 	   	text = "Delgadez severa \n"+ "Indice Masa Corporal (IMC): " + imc;
+ 	   }
+ 	   else if(imc>16 && imc<18.4){
+ 	   	text = "Delgadez \n" + "Indice Masa Corporal (IMC): "+ imc;
+ 	   }
+ 	   else if(imc>18.5 && imc<24.9){
+ 	   	text = "Peso Saludable \n"+ "Indice Masa Corporal (IMC): " + imc;
+ 	   }
+ 	   else if(imc>25 && imc<29.9){
+ 	   	text = "Sobrepeso \n"+ "Indice Masa Corporal (IMC): "  + imc;
+ 	   }
+ 	   else if(imc>30 && imc<34.9){
+ 	   	text = "Obesidad severa \n"+ "Indice Masa Corporal (IMC): " + imc;
+ 	   }
+ 	   else if(imc>40){
+ 	   	text="Obesidad Morbida \n"+ "Indice Masa Corporal (IMC): "+ imc;
+ 	   }
+ 	   else{
+ 	   	text="Dato Invalido";
+ 	   }
+
+ 	   alert(text);
+ 	}
+
+
+ </script>
 
 
 </body>
