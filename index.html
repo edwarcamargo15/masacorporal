@@ -11,65 +11,91 @@
 	<title>INDICE DE MASA CORPORAL</title>
 
 
-	<script type="text/javascript">
-		/*let peso= prompt("Ingresa tu peso");
-		let altura= prompt("Ingresa tu Altura");
-        console.log(" No INGRESE "+ peso + "-" + altura);*/
-
-        calcularImc(peso,altura);
-		function calcularImc(){
-		console.log(" IMC p "+ peso);
-		console.log(" IMC a "+ altura);
-		var peso = document.getElementById("peso").value;
-		var altura = document.getElementById("altura").value;
-		let imc= peso/(altura**2);
-        let text="";
-        console.log(" Ingrese a "+ imc);
-        if (imc < 15) {
-         text = "Delgadez Muy severa";
-         color
-         }
-        else if(imc>15 && imc<15.9){
-         	 text = "Delgadez severa";
-         }
-         else if(imc>16 && imc<18.4){
-         	 text = "Delgadez";
-         }
-         else if(imc>18.5 && imc<24.9){
-         	 text = "Peso Saludable";
-         }
-         else if(imc>25 && imc<29.9){
-         	 text = "Sobrepeso";
-         }
-         else if(imc>30 && imc<39.9){
-         	 text = "Obesidad severa";
-         }
-         else if(imc>40){
-         	text="Obesidad Morbida";
-         }
-         else{
-         	text="Dato Invalido";
-         }
-         alert(text);
-		}
-		 
-	</script>
+	
 </head>
 <body>
 <form>
   <div class="row">
     <div class="col">
+      <label>Ingrese Peso Corporal Kilogramos</label>
       <input type="number" class="form-control" placeholder="Peso" id="peso">
     </div>
     <div class="col">
+    	<label>Ingrese Altura en Metros (Ejemplo:1.50,1.80)</label>
       <input type="number" class="form-control" placeholder="Altura" id="altura">
     </div>
      <div class="col-auto">
-      <button onclick="calcularImc(this,this)" type="submit" class="btn btn-primary mb-2">Calcular</button>
+      <button onclick="calcularImc(this,this)" type="submit" class="btn btn-primary mb-2" id="btn">Calcular</button>
     </div>
   </div>
 </form>
+<script type="text/javascript">
 
+
+		var opc= prompt("Selecciona Opcion: \n" + "Prompt: Ingresa 1"+"\n" + "Input: Ingresa 2");
+	    var peso;
+		var altura;
+		/*let peso= prompt("Ingresa tu peso");
+		let altura= prompt("Ingresa tu Altura");
+        console.log(" No INGRESE "+ peso + "-" + altura);*/
+
+       
+        if(opc==1){
+
+         peso= prompt("Ingresa tu peso");
+		 altura= prompt("Ingresa tu Altura");
+        console.log(" No INGRESE "+ peso + "-" + altura);
+        calcularImc(peso,altura);
+        }if(opc==2){
+        	peso = document.getElementById("peso").value;
+		altura = document.getElementById("altura").value;
+        	
+        }
+        else{
+        	alert("Dato Invalido condicion");
+        }
+        
+		function calcularImc(peso,altura){
+	     
+		
+        	 
+ 	   /* peso = document.getElementById("peso").value;
+		altura = document.getElementById("altura").value;*/
+		
+		let imc= peso/(altura**2);
+        let text="";
+        console.log(" Ingrese a "+ imc);
+       
+        if (imc < 15) {
+         text = "Delgadez Muy severa";
+         }
+        else if(imc>15 && imc<15.9){
+         	 text = "Delgadez severa \n"+ "Indice Masa Corporal (IMC): " + imc;
+         }
+         else if(imc>16 && imc<18.4){
+         	 text = "Delgadez \n" + "Indice Masa Corporal (IMC): "+ imc;
+         }
+         else if(imc>18.5 && imc<24.9){
+         	 text = "Peso Saludable \n"+ "Indice Masa Corporal (IMC): " + imc;
+         }
+         else if(imc>25 && imc<29.9){
+         	 text = "Sobrepeso \n"+ "Indice Masa Corporal (IMC): "  + imc;
+         }
+         else if(imc>30 && imc<34.9){
+         	 text = "Obesidad severa \n"+ "Indice Masa Corporal (IMC): " + imc;
+         }
+         else if(imc>40){
+         	text="Obesidad Morbida \n"+ "Indice Masa Corporal (IMC): "+ imc;
+         }
+         else{
+         	text="Dato Invalido";
+         }
+
+         alert(text);
+		}
+
+		 
+	</script>
 
 
 </body>
