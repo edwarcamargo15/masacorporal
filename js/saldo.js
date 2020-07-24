@@ -1,8 +1,11 @@
-
+var cantidad = prompt("Ingresa el valor a depositar");
+var retiro=prompt("Ingresa el valor a retirar");
+cuenta.depositar: function(cantidad);
+cuenta.retirar: function(retiro);
+cuenta.consultar: function();
 var cuenta =
 {
-	cantidad = prompt("Ingresa el valor a depositar");
-    retiro=prompt("Ingresa el valor a retirar");
+
 	titular:"Edwar Camargo",
 	saldo:0,
 
@@ -24,9 +27,3 @@ var cuenta =
 	}
     
 }
-console.log(cuenta.depositar: function(cantidad));
-console.log(cuenta.retirar: function(retiro));
-console.log(cuenta.consultar: function());
-
-
-

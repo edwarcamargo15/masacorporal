@@ -1,15 +1,4 @@
 
-		/*var opc= prompt("Selecciona Opcion: \n" + "Prompt: Ingresa 1");
-		var peso;
-		var altura;
-
-		if(opc==1){
-
-			peso= prompt("Ingresa tu peso");
-			altura= prompt("Ingresa tu Altura");
-			console.log(" No INGRESE "+ peso + "-" + altura);
-			calcularImc(peso,altura);
-		}*/
 		var peso= prompt("Ingresa tu peso");
 		var altura= prompt("Ingresa tu Altura");
 
