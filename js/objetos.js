@@ -1,14 +1,13 @@
 var valor= prompt("Ingresa el valor a depositar");
 var ret = prompt("Ingresa el valor a retirar");
 
-var CuentaAhorro = 
+var Cuenta = 
         {
             
             titular: "Edwar Camargo ",
             saldo : 0,
             ingresar: function(cantidad)
-            {
-               
+            {    
                 
                  alert("Has Depositado: " + cantidad + " Dolares (US)");
                 return this.saldo += cantidad;
@@ -20,6 +19,7 @@ var CuentaAhorro =
                 
                 alert("Has retirado: " + retiro + " Dolares (US)");
                 return this.saldo -= retiro;
+                
             },
 
             informar: function(){
@@ -29,9 +29,9 @@ var CuentaAhorro =
             },
             
         } 
-        CuentaAhorro.ingresar(valor);
-        CuentaAhorro.extraer(ret);
-        CuentaAhorro.informar();
+        Cuenta.ingresar(valor);
+        Cuenta.extraer(ret);
+        Cuenta.informar();
 
 
 
